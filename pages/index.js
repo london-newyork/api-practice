@@ -25,13 +25,16 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='px-10 mt-10'>
-        <ol className='list-decimal'>
-          {posts.map((post) => {
-            return (
-              <li key={post.id}>{post.title}</li>
-            )
-          })}
-        </ol>
+        {posts.length > 0 ?
+          (<ol className='list-decimal'>
+            {
+              posts.map((post) => {
+                return (
+                  <li key={post.id}>{post.title}</li>
+                )
+              })}
+          </ol>)
+          : null}
       </main>
     </div>
   )
